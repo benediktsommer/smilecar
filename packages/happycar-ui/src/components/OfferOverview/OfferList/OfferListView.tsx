@@ -11,6 +11,7 @@ import {
 } from '@material-ui/core';
 
 import { IOffer } from '../../../interfaces/offer.interface';
+import { StarRating } from '../StarRating';
 
 import { Offer } from './Offer';
 
@@ -22,7 +23,7 @@ const OfferCard = withStyles(() => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    background: 'linear-gradient(270deg, #e85922 0%, #FFFFFF 1.5%)',
+    background: 'linear-gradient(360deg, #e85922 0%, #FFFFFF 3%)',
   },
 }))(Card);
 
@@ -40,13 +41,27 @@ export const OfferListView = memo(({ offers }: IProps) => {
   return (
     <>
       {offers.map((offer, index) => (
-        <Box my={4} key={String(index)}>
+        <Box key={String(index)}>
           <OfferCard>
-            <Box pt={2} px={2}>
-              <Typography variant="subtitle2">
-                {offer.vehicle.category}
-              </Typography>
-              <Typography variant="h6">{offer.vehicle.name}</Typography>
+            <Box display="flex" justifyContent="space-between">
+              <Box pt={2} px={2}>
+                <Typography variant="subtitle2">
+                  {offer.vehicle.category}
+                </Typography>
+                <Typography variant="h6">{offer.vehicle.name}</Typography>
+              </Box>
+              <Box pt={2} px={2}>
+                <Box>
+                  <img
+                    src={offer.supplier.logoUrl}
+                    alt={`${offer.supplier.name} Logo`}
+                    width={150}
+                  />
+                </Box>
+                {offer.supplier.rating.average ? (
+                  <StarRating rating={offer.supplier.rating} />
+                ) : null}
+              </Box>
             </Box>
             <CardContent>
               <Offer offer={offer} />

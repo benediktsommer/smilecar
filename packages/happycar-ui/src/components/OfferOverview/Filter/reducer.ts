@@ -17,7 +17,7 @@ export const filterReducer = (
 ): IFilterState => {
   switch (action.type) {
     case FilterActionTypes.FILTER_DELETE: {
-      return state;
+      return initialFilterState;
     }
 
     case FilterActionTypes.FILTER_SELECTED: {

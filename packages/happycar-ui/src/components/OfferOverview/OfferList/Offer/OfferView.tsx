@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { ArrowForward } from '@material-ui/icons';
-import { Box, Button, createStyles, Grid, withStyles } from '@material-ui/core';
+import { Box, createStyles, Grid, withStyles } from '@material-ui/core';
 
 import { IOffer } from '../../../../interfaces/offer.interface';
 
@@ -16,14 +16,14 @@ interface IProps {
 export const OfferView = memo(({ offer, handleNextButton }: IProps) => {
   return (
     <>
-      <Grid container spacing={2}>
+      <Grid container justify="space-between" spacing={2} alignItems="center">
         <Grid item xs={12} md={5}>
           <CarImage
             src={offer.vehicle.imageUrl}
             alt={`${offer.vehicle.category} - ${offer.vehicle.name}`}
           />
         </Grid>
-        <Grid item xs={12} md={7}>
+        <Grid item xs={12} md={6}>
           <OfferCondition
             price={offer.price}
             term={12}

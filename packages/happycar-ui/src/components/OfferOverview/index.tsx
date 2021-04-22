@@ -13,7 +13,6 @@ export const OfferOverview = memo(() => {
   return (
     <FilterProvider>
       <Grid container>
-        <Grid item xs={12}></Grid>
         <Grid item xs={12} md={3}>
           <Filter />
         </Grid>

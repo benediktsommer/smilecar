@@ -19,7 +19,7 @@ const throwMissingProvider = () => {
 interface IOfferStateContextType {
   filter: IFilterState;
   addFilter(filterType: FilterTypes, option: string | number): void;
-  deleteFilter(filterType: FilterTypes, option: string | number): void;
+  deleteFilter(): void;
 }
 
 interface IFilterDispatchContextType {
@@ -46,14 +46,11 @@ export const FilterProvider = memo(({ children }) => {
     [dispatch]
   );
 
-  const deleteFilter = useCallback(
-    (filterType: FilterTypes, option: string | number) => {
-      dispatch({
-        type: FilterActionTypes.FILTER_DELETE,
-      });
-    },
-    [dispatch]
-  );
+  const deleteFilter = useCallback(() => {
+    dispatch({
+      type: FilterActionTypes.FILTER_DELETE,
+    });
+  }, [dispatch]);
 
   return (
     <FilterStateContext.Provider value={{ addFilter, deleteFilter, filter }}>

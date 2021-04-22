@@ -41,43 +41,36 @@ const OfferCTA = withStyles((theme) =>
 
 export const OfferCondition = memo(({ price, term, handleClick }: IProps) => {
   return (
-    <ConditionBox p={2}>
-      <Grid
-        container
-        direction="row"
-        justify="space-between"
-        alignItems="center"
-        spacing={1}
-      >
-        <Grid item>
-          <Typography variant="h5">
-            <strong>
-              {formatCurrency(price.value * term, {
-                currency: price.currencyCode,
-              })}
-            </strong>
-          </Typography>
-          <Typography variant="subtitle2">
-            <strong>
-              {`${formatCurrency(price.value, {
-                currency: price.currencyCode,
-              })}/Day`}
-            </strong>
-          </Typography>
-        </Grid>
-        <Grid item>
-          <OfferCTA
-            variant="contained"
-            color="primary"
-            size="large"
-            type="submit"
-            endIcon={<ArrowForward />}
-            onClick={handleClick}
-          >
-            Book now
-          </OfferCTA>
-        </Grid>
-      </Grid>
-    </ConditionBox>
+    <Box textAlign="right" pt={3}>
+      <Box>
+        <Typography variant="h5">
+          <strong>
+            {formatCurrency(price.value * term, {
+              currency: price.currencyCode,
+            })}
+          </strong>
+        </Typography>
+        <Typography variant="subtitle2">
+          <strong>
+            {`${formatCurrency(price.value, {
+              currency: price.currencyCode,
+            })} / Day`}
+          </strong>
+        </Typography>
+      </Box>
+      <Box pt={2}>
+        <OfferCTA
+          variant="contained"
+          color="primary"
+          size="large"
+          type="submit"
+          endIcon={<ArrowForward />}
+          onClick={handleClick}
+          style={{ width: '280px' }}
+        >
+          Book now
+        </OfferCTA>
+      </Box>
+    </Box>
   );
 });
