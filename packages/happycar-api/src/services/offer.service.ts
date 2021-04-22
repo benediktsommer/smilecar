@@ -51,7 +51,7 @@ export class OfferServiceImpl extends OfferService {
           taxPercentage: offer.price.taxPercentage || 0,
           payAt: offer.price.payAt,
         },
-      }))
+      })).sort((offerA, offerB) => offerB.supplier.rating.average - offerA.supplier.rating.average)
     );
   }
 }
