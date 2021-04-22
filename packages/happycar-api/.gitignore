@@ -1,0 +1,56 @@
+###############################
+# GENERAL
+###############################
+# Logs
+logs
+*.log
+*.err
+.eslintcache
+
+# Editors/IDEs
+.idea/
+/*.iml
+
+# Node
+node_modules/
+
+# OSX specific
+.DS_Store
+
+# Coverage
+/coverage
+
+# npm cache directory
+.npm
+.cache
+.docz
+
+###############################
+# Project specific
+###############################
+.env.development
+/build
+/lib
+/index.js
+/public/sdk.js
+/infrastructure/*.zip
+
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/.pnp
+.pnp.js
+
+# production
+/bin
+/dist
+
+# misc
+.cache
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+/analyze

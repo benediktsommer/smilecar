@@ -1,0 +1,26 @@
+{
+  "name": "smilecar",
+  "version": "1.0.6",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "setup": "yarn && yarn bootstrap",
+    "build": "lerna run build --stream",
+    "bootstrap": "lerna bootstrap --use-workspaces --ignore=@cq/*server",
+    "start": "lerna bootstrap && lerna run --parallel start",
+    "lint": "lerna run lint --stream",
+    "typecheck": "lerna run typecheck --stream",
+    "test": "CI=true lerna run test --stream",
+    "test:watch": "lerna run --parallel test -- --watch",
+    "version:ci": "lerna version $npm_package_version",
+    "version:ci-pre": "lerna version prerelease"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}

@@ -1,0 +1,23 @@
+###############################
+# GENERAL
+###############################
+# Logs
+logs
+*.log
+*.err
+.eslintcache
+
+# Editors/IDEs
+.idea/
+/*.iml
+
+# Node
+node_modules/
+
+# OSX specific
+.DS_Store
+
+# npm cache directory
+.npm
+.cache
+.docz
