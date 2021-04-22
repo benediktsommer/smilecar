@@ -26,7 +26,7 @@ export const OfferView = memo(({ offer, handleNextButton }: IProps) => {
         <Grid item xs={12} md={6}>
           <OfferCondition
             price={offer.price}
-            term={12}
+            term={2}
             handleClick={handleNextButton}
           />
         </Grid>
