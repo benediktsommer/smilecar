@@ -20,11 +20,8 @@ export interface IOffer {
     name: string;
     imageUrl: string;
     acrissCode: string;
-    gearType: GearType;
-    bags: {
-      min: number;
-      max: number;
-    };
+    gearType: string;
+    bags: number;
     seats: number;
     doors: number;
     hasAC: boolean;

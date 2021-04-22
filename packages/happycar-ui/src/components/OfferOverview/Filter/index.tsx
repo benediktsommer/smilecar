@@ -5,33 +5,25 @@ import { FilterTypes } from '../../../interfaces/filter.interface';
 import { useGetFilter } from '../../../hooks/useGetFilter';
 import { useOfferListDispatch } from '../../Screens/OfferOverview/context';
 import { OfferListActionTypes } from '../../Screens/OfferOverview/action';
+import { useGetAvailableFilter } from '../../../hooks/useGetAvailableFilter';
 
 import { FilterWidget } from './FilterWidget';
+import { useFilterState } from './context';
 
 export const Filter = memo(() => {
-  const { dispatch } = useOfferListDispatch();
-  const { filter } = useGetFilter();
+  const { addFilter, filter } = useFilterState();
+  const { filter: originalFilter } = useGetFilter();
+  const { availableFilter } = useGetAvailableFilter();
 
-  const handleFilter = useCallback(
-    (filterType: FilterTypes, value: number | string): void => {
-      dispatch({
-        type: OfferListActionTypes.OFFER_FILTERED,
-        filterIdentifier: filterType,
-        filterOption: value,
-      });
-    },
-    [dispatch]
-  );
-
-  if (!filter) {
+  if (!originalFilter || !availableFilter) {
     return null;
   }
 
   return (
     <Box mt={4} mr={2}>
-      {Object.keys(filter).map((option) => {
+      {Object.keys(originalFilter).map((option) => {
         /* some strage TS behaviors */
-        const filterOption = filter[option as FilterTypes];
+        const filterOption = originalFilter[option as FilterTypes];
         if (!filterOption) {
           return null;
         }
@@ -41,10 +33,15 @@ export const Filter = memo(() => {
           <Fragment key={option}>
             <FilterWidget
               headline={option.toUpperCase()}
-              handleFilter={handleFilter}
+              handleFilter={addFilter}
               filterOptions={filterOption.map((value) => ({
                 identifier: option as FilterTypes,
-                disabled: false,
+                disabled: !availableFilter[option as FilterTypes]?.includes(
+                  value
+                ),
+                active:
+                  filter.selected[option as FilterTypes]?.includes(value) ||
+                  false,
                 value,
               }))}
             />

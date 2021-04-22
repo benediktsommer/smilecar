@@ -29,7 +29,6 @@ export const useLoadOffers = () => {
       return;
     }
 
-    console.log(data.filter);
     dispatch({
       type: OfferListActionTypes.OFFERLIST_LOAD_SUCCESSFUL,
       offers: data.offers,

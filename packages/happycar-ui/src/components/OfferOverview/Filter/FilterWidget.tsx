@@ -16,11 +16,12 @@ import { FilterOption } from './FilterOption';
 
 interface IProps {
   headline: string;
-  handleFilter(filterType: FilterTypes, value: number | string): void;
+  handleFilter(filterType: FilterTypes, value: number | string | boolean): void;
   filterOptions: {
     identifier: FilterTypes;
-    value: string | number;
+    value: string | number | boolean;
     disabled: boolean;
+    active: boolean;
   }[];
 }
 
@@ -67,6 +68,7 @@ export const FilterWidget = memo(
             <FilterOption
               identifier={option.identifier}
               disabled={option.disabled}
+              active={option.active}
               handleClick={handleFilter}
               value={option.value}
               key={String(index)}

@@ -9,7 +9,7 @@ export const offerAdapter = async (): Promise<{
   filter: IFilter;
 }> => {
   const response = await axios.get(`${config.api.happycar.host}/offers`);
-  console.log(response.data);
+
   return {
     offers: response.data.offers,
     filter: response.data.filter,

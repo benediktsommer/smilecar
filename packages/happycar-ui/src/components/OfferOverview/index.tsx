@@ -5,18 +5,21 @@ import { useLoadOffers } from '../../hooks/useLoadOffers';
 
 import { Filter } from './Filter';
 import { OfferList } from './OfferList';
+import { FilterProvider } from './Filter/context';
 
 export const OfferOverview = memo(() => {
   useLoadOffers();
 
   return (
-    <Grid container>
-      <Grid item xs={12} md={3}>
-        <Filter />
+    <FilterProvider>
+      <Grid container>
+        <Grid item xs={12} md={3}>
+          <Filter />
+        </Grid>
+        <Grid item xs={12} md={9}>
+          <OfferList />
+        </Grid>
       </Grid>
-      <Grid item xs={12} md={9}>
-        <OfferList />
-      </Grid>
-    </Grid>
+    </FilterProvider>
   );
 });

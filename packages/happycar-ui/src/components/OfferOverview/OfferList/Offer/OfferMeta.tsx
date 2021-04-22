@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { Box, Typography, withStyles } from '@material-ui/core';
 import { Person, AcUnit, AccountTree, LocalMall } from '@material-ui/icons';
 
-import { IOffer } from 'happycar-api/src/domain/interfaces/offer.interface';
+import { IOffer } from '../../../../interfaces/offer.interface';
 
 interface IProps {
   vehicle: IOffer['vehicle'];
@@ -36,14 +36,10 @@ export const OfferMeta = memo(({ vehicle }: IProps) => {
             <AcUnit />
           </Box>
         )}
-        {vehicle.bags.min > 0 && (
+        {vehicle.bags > 0 && (
           <Box px={2}>
             <LocalMall />{' '}
-            {`${vehicle.bags.min}${
-              vehicle.bags.max > 0 && vehicle.bags.max > vehicle.bags.min
-                ? ` - ${vehicle.bags.max}`
-                : ''
-            }`}
+            {`${vehicle.bags}${vehicle.bags > 0 ? ` - ${vehicle.bags}` : ''}`}
           </Box>
         )}
       </MetaBox>
