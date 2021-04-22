@@ -21,7 +21,9 @@ interface IProps {
 
 const ConditionBox = withStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.grey[100],
+    [theme.breakpoints.up('md')]: {
+      padding: theme.spacing(2),
+    },
   },
 }))(Box);
 
@@ -59,20 +61,20 @@ export const OfferCondition = memo(({ price, term, handleClick }: IProps) => {
             <strong>
               {`${formatCurrency(price.value, {
                 currency: price.currencyCode,
-              })}/Tag`}
+              })}/Day`}
             </strong>
           </Typography>
         </Grid>
         <Grid item>
           <OfferCTA
             variant="contained"
-            color="secondary"
+            color="primary"
             size="large"
             type="submit"
             endIcon={<ArrowForward />}
             onClick={handleClick}
           >
-            Fahrzeug wählen
+            Book now
           </OfferCTA>
         </Grid>
       </Grid>

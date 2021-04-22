@@ -5,11 +5,11 @@ export const THEME_MUI: Theme = createMuiTheme({
     background: {
       default: '#FFFFFF',
     },
-    primary: { main: '#5C5F58', dark: '#F67C27' },
-    secondary: { light: '#B73225', main: '#B73225', dark: '#3b4e4f' },
+    primary: { main: '#2479d3', dark: '#F67C27' },
+    secondary: { light: '#B73225', main: '#e85922', dark: '#3b4e4f' },
     error: { main: '#B73225' },
     success: { main: '#90ee90' },
-    text: { primary: '#5C5F58', secondary: '#B73225' },
+    text: { primary: '#5C5F58', secondary: '#e85922' },
   },
   typography: {
     fontFamily: ['Karla', 'sans-serif'].join(','),

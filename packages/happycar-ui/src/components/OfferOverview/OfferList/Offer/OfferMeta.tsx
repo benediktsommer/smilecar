@@ -20,7 +20,7 @@ export const OfferMeta = memo(({ vehicle }: IProps) => {
   return (
     <>
       <Typography variant="body1">
-        <strong>Fahrzeugkategorie: {vehicle.category.toUpperCase()}</strong>
+        <strong>Vehicle category: {vehicle.category.toUpperCase()}</strong>
       </Typography>
       <MetaBox display="flex">
         {vehicle.seats > 0 && (

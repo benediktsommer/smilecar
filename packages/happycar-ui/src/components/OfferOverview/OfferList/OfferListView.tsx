@@ -3,8 +3,11 @@ import {
   Box,
   Card,
   CardContent,
+  makeStyles,
   Typography,
   withStyles,
+  Theme,
+  createStyles,
 } from '@material-ui/core';
 
 import { IOffer } from '../../../interfaces/offer.interface';
@@ -19,10 +22,21 @@ const OfferCard = withStyles(() => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
+    background: 'linear-gradient(270deg, #e85922 0%, #FFFFFF 1.5%)',
   },
 }))(Card);
 
+const useStyles = makeStyles<Theme>((theme) =>
+  createStyles({
+    indicator: {
+      width: 10,
+      backgroundColor: theme.palette.primary.main,
+    },
+  })
+);
+
 export const OfferListView = memo(({ offers }: IProps) => {
+  const { indicator } = useStyles();
   return (
     <>
       {offers.map((offer, index) => (
@@ -37,6 +51,7 @@ export const OfferListView = memo(({ offers }: IProps) => {
             <CardContent>
               <Offer offer={offer} />
             </CardContent>
+            <div className={indicator} />
           </OfferCard>
         </Box>
       ))}
