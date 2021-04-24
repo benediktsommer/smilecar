@@ -29,10 +29,12 @@ This API is responsible for providing offer information sorted by rating average
 
 #### Architecture
 
-In the past I heard a lot of the "Clean Architecture" pattern by Uncle Bob and I thought it would be a good idea to test this pattern in your coding challenge.
-I had to make some changes throughout the data flow to implement this pattern into JavaScript. But I think it is possible and can be used in the future. Yey!
+The "Clean Architecture" pattern by Uncle Bob intrigued me for quite some time. Therefore, I thought it would be a good opportunity to test this pattern in your coding challenge.
+I had to make some changes throughout the data flow to implement this pattern into JavaScript. Still, I think it is possible to use this pattern in the future. Yay!
 
+[Uncle Bob - the-clean-architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 ![mobx stores](./docs/assets/clean_architecure.png)
+[Source](https://stackoverflow.com/questions/29867671/clojure-architecture-like-uncle-bob-did)
 
     .
     ├── ...
@@ -43,5 +45,5 @@ I had to make some changes throughout the data flow to implement this pattern in
     │   ├── infrastructure          # All serverframework (express) specific files and flows
     │   │   ├── routes              # Route definitions
     │   │   └── server              # Express server files
-    │   └── services                # Services who loads the required data and bring them to the specific structure (Interface in domain)
+    │   └── services                # Services that load the required data and convert them to a specific structure (Interface in domain)
     └── ...

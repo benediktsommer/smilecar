@@ -35,8 +35,9 @@ Smilecar consits of two diferent packages in a lerna monorepo.
 
 **Purpose:**
 
-- holds mocked data
-- filters the dataset by rating average
+- Express + Infersify + TypeScript
+- Holds mocked data
+- Filters the dataset by rating average
 
 ### Smilecar-ui ➡️ "the frontend"
 
@@ -46,5 +47,5 @@ Smilecar consits of two diferent packages in a lerna monorepo.
 
 - React + TypeScript
 - SPA (single page application)
-- Display an offer overview with basic information
-- Handle filter functionions
+- Shows an offer overview with basic information
+- Handles filter functionions
