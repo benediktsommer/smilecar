@@ -1,6 +1,6 @@
 # Smilecar-UI
 
-This UI displays all offerinformation and provides a filter functionality.
+This UI displays all offer information and provides a filter functionality.
 
 ## Development
 

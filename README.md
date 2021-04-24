@@ -41,7 +41,7 @@ Smilecar consits of two diferent packages in a lerna monorepo.
 
 ### Smilecar-ui ➡️ "the frontend"
 
-[Smilecar-api](packages/smilecar-ui/README.md)
+[Smilecar-ui](packages/smilecar-ui/README.md)
 
 **Language + Tech:**
 
