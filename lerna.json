@@ -1,5 +1,5 @@
 {
-  "name": "happycar",
+  "name": "smilecar",
   "npmClient": "yarn",
   "useWorkspaces": true,
   "packages": ["packages/*"],

@@ -17,7 +17,7 @@
     "noEmit": true,
     "jsx": "preserve",
     "paths": {
-      "@happycar/api": ["happycar-api/src"],
+      "@happycar/api": ["smilecar-api/src"],
       "@happycar/*": ["*/src"]
     }
   },

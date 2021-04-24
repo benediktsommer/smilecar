@@ -1,0 +1,21 @@
+{
+  "preset": "ts-jest",
+  "roots": ["<rootDir>/src"],
+  "resetMocks": false,
+  "automock": false,
+  "cache": false,
+  "collectCoverage": true,
+  "collectCoverageFrom": ["**/*.{ts,tsx}"],
+  "coverageDirectory": "bin/coverage",
+  "coverageThreshold": {
+    "global": {
+      "statements": 10,
+      "branches": 10,
+      "functions": 10,
+      "lines": 10
+    }
+  },
+  "setupFilesAfterEnv": ["<rootDir>/src/setupTests.ts"],
+  "testEnvironment": "node",
+  "verbose": true
+}
