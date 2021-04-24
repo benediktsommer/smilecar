@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { Body } from './Body';
+import { LanguageSelector } from './';
 
 jest.mock('react-i18next', () => ({
   useTranslation: () => ({
@@ -11,13 +11,9 @@ jest.mock('react-i18next', () => ({
   }),
 }));
 
-describe('Test <Body />', () => {
+describe('Test <LanguageSelector />', () => {
   it('should render an html markup', () => {
-    const { asFragment } = render(
-      <Body>
-        <div>Test</div>
-      </Body>
-    );
+    const { asFragment } = render(<LanguageSelector />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

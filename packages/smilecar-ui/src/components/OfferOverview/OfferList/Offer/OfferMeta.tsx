@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { Box, Typography, withStyles } from '@material-ui/core';
 import { Person, AcUnit, AccountTree, LocalMall } from '@material-ui/icons';
+import { useTranslation } from 'react-i18next';
 
 import { IOffer } from '../../../../interfaces/offer.interface';
 
@@ -17,10 +18,14 @@ const MetaBox = withStyles((theme) => ({
 }))(Box);
 
 export const OfferMeta = memo(({ vehicle }: IProps) => {
+  const { t } = useTranslation();
   return (
     <>
       <Typography variant="body1">
-        <strong>Vehicle category: {vehicle.category.toUpperCase()}</strong>
+        <strong>
+          {t('vehicle_categorie', 'Vehicle category')}:{' '}
+          {vehicle.category.toUpperCase()}
+        </strong>
       </Typography>
       <MetaBox display="flex">
         {vehicle.seats > 0 && (

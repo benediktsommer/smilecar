@@ -3,6 +3,12 @@ import { render } from '@testing-library/react';
 
 import { Filter } from './';
 
+jest.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string, fallback: string) => fallback,
+  }),
+}));
+
 const mockedFilterValue = jest.fn();
 jest.mock('./context', () => ({
   useFilterState: () => ({

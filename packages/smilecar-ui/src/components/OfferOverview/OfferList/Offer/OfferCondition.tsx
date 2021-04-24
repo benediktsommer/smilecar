@@ -8,6 +8,7 @@ import {
   Typography,
   withStyles,
 } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 import { ArrowForward } from '@material-ui/icons';
 
 import { IOffer } from '../../../../interfaces/offer.interface';
@@ -40,6 +41,8 @@ const OfferCTA = withStyles((theme) =>
 )(Button);
 
 export const OfferCondition = memo(({ price, term, handleClick }: IProps) => {
+  const { t } = useTranslation();
+
   return (
     <Box textAlign="right" pt={3}>
       <Box>
@@ -54,7 +57,7 @@ export const OfferCondition = memo(({ price, term, handleClick }: IProps) => {
           <strong>
             {`${formatCurrency(price.value, {
               currency: price.currencyCode,
-            })} / Day`}
+            })} / ${t('unity_day', 'Day')}`}
           </strong>
         </Typography>
       </Box>
@@ -68,7 +71,7 @@ export const OfferCondition = memo(({ price, term, handleClick }: IProps) => {
           onClick={handleClick}
           style={{ width: '280px' }}
         >
-          Book now
+          {t('bookNow_CTA', 'Book now')}
         </OfferCTA>
       </Box>
     </Box>

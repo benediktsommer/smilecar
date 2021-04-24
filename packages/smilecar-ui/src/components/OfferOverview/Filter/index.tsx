@@ -1,5 +1,6 @@
 import { Fragment, memo, ReactNode, useCallback } from 'react';
 import { Box, Button, withStyles } from '@material-ui/core';
+import { useTranslation } from 'react-i18next';
 
 import { FilterTypes } from '../../../interfaces/filter.interface';
 import { useGetFilter } from '../../../hooks/useGetFilter';
@@ -27,6 +28,7 @@ const ResetFilterCTA = withStyles((theme) => ({
 }))(Button);
 
 export const Filter = memo(() => {
+  const { t } = useTranslation();
   const { addFilter, deleteFilter, filter } = useFilterState();
   const { filter: originalFilter } = useGetFilter();
   const { availableFilter } = useGetAvailableFilter();
@@ -46,7 +48,10 @@ export const Filter = memo(() => {
         return (
           <Fragment key={option}>
             <FilterWidget
-              headline={option.toUpperCase()}
+              headline={t(
+                `filter_${option.toLowerCase()}`,
+                option.toUpperCase()
+              )}
               handleFilter={addFilter}
               filterOptions={filterOption.map((value) => ({
                 identifier: option as FilterTypes,
