@@ -1,7 +1,7 @@
 # smilecar
-This repository is based on the Happycar coding challange. I chosed the frontend part and added a backend to finally have the opportunity to try out a monorepo.
+This repository is based on the Happycar coding challange. From the provided challanges I chose to complete the frontend task including some backend elements to finally have the opportunity to try out a monorepo.
 What exactly does that mean? In this project I tried to build a monorepo with Typescript, React, Express and Infersify...
-It will be funny. Have fun looking through it
+It will be funny. Have fun looking through it.
 
 ## Development
 
