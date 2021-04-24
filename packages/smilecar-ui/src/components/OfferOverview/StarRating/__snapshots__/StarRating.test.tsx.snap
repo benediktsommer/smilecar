@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <StarRating /> should render an html markup 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root MuiBox-root-1"
+  >
+    <div
+      class="MuiBox-root MuiBox-root-3 Styled(MuiBox)-root-2"
+      classes="[object Object]"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-5 Styled(MuiBox)-root-4"
+        classes="[object Object]"
+        style="width: 68%;"
+      />
+      <span
+        class="MuiTypography-root MuiTypography-subtitle2"
+      >
+        Ø 3.4 (3)
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
