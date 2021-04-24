@@ -115,14 +115,12 @@ describe('Get-Offers.Interactor', () => {
       });
 
       it('should return the received offers and all available filters', async () => {
-        interactor
-          .interact()
-          .then(() => {
-            expect(true).toBeFalsy();
-          })
-          .finally(() => {
-            expect(mockedLogger).toHaveBeenCalledWith('ERROR: No offers available. Reason: Response Error');
-          });
+        try {
+          await interactor.interact();
+          expect(true).toBeFalsy();
+        } catch (e) {
+          expect(mockedLogger).toHaveBeenCalledWith('ERROR: No offers available. Reason: Response Error');
+        }
       });
     });
   });
