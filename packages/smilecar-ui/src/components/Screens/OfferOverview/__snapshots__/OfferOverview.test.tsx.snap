@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test <OfferOverview /> should render an html markup 1`] = `
+<DocumentFragment>
+  <div
+    id="OfferOverview"
+  />
+</DocumentFragment>
+`;

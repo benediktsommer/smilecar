@@ -38,12 +38,10 @@ export const Filter = memo(() => {
   return (
     <FilterWrapper>
       {Object.keys(originalFilter).map((option) => {
-        /* some strage TS behaviors */
-        const filterOption = originalFilter[option as FilterTypes];
+        const filterOption = originalFilter[option as FilterTypes] || [];
         if (!filterOption) {
           return null;
         }
-        /* end strange behavior */
 
         return (
           <Fragment key={option}>

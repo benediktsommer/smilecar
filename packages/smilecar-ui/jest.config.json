@@ -1,0 +1,31 @@
+{
+  "preset": "ts-jest",
+  "globals": {
+    "ts-jest": {
+      "tsConfig": "tsconfig.jest.json"
+    }
+  },
+  "moduleNameMapper": {
+    "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.ts"
+  },
+  "testPathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/lib/"],
+  "roots": ["<rootDir>/src"],
+  "testMatch": ["**/*.test.ts", "**/*.test.tsx"],
+  "resetMocks": true,
+  "resetModules": true,
+  "verbose": true,
+  "automock": false,
+  "cache": false,
+  "collectCoverage": true,
+  "collectCoverageFrom": ["**/*.{ts,tsx}"],
+  "coverageDirectory": "bin/coverage",
+  "coverageThreshold": {
+    "global": {
+      "statements": 0,
+      "branches": 0,
+      "functions": 0,
+      "lines": 0
+    }
+  },
+  "coveragePathIgnorePatterns": ["lib/", "src/index.tsx", "src/components/App.tsx", "src/theme/media.ts"]
+}
