@@ -35,7 +35,7 @@ Smilecar consits of two diferent packages in a lerna monorepo.
 
 **Purpose:**
 
-- Express + Infersify + TypeScript
+- Express + Inversify + TypeScript
 - Holds mocked data
 - Filters the dataset by rating average
 
